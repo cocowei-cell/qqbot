@@ -2,7 +2,7 @@
   "name": "qqbot-js",
   "version": "1.3.0",
   "description": "基于go-cqhttp的qq机器人js框架",
-  "main": "./src/dist/index.js",
+  "main": "./main/index.js",
   "scripts": {
     "bot": "node index.js",
     "build": "tsc",
@@ -20,6 +20,7 @@
   "dependencies": {
     "body-parser": "^1.19.1",
     "express": "^4.17.2",
+    "maxz-cli": "^1.8.2",
     "node-schedule": "^2.1.0",
     "ws": "^8.4.2"
   },

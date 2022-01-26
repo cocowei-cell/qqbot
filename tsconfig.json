@@ -7,8 +7,7 @@
     "experimentalDecorators": true,
     "allowSyntheticDefaultImports": true,
     "target": "es2017",
-    "sourceMap": true,
-    "outDir": "./src/dist",
+    "outDir": "dist",
     "baseUrl": "./",
     "rootDir": "./src",
     "incremental": true,
@@ -18,10 +17,10 @@
     "noImplicitAny": false,
     "strictBindCallApply": false,
     "forceConsistentCasingInFileNames": false,
-    "noFallthroughCasesInSwitch": false,
+    "noFallthroughCasesInSwitch": false
   },
   "exclude": [
     "node_modules",
-    "./src/dist"
-  ]
+    "dist"
+  ],
 }
