@@ -1,7 +1,7 @@
 # 基于go-cqhttp的JavaScript的QQ机器人框架：js-qqbot
 
 > 安装：npm i js-qqbot
-> Git仓库：
+> Git仓库：https://github.com/cocowei-cell/qqbot-js
 
 - 项目使用typescript编译器编译，以便有类型声明文件
 
