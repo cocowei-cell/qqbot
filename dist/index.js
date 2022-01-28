@@ -39,10 +39,18 @@ class QQBot {
         this.ws.on('connection', socket => {
             console.log('连接上....');
             const socketSend = socket.send.bind(socket);
-            socket.send = (action, data) => socketSend(JSON.stringify({
-                action,
-                params: data,
-            }));
+            socket.send = (action, data) => new Promise(resolve => {
+                socketSend(JSON.stringify({
+                    action,
+                    params: data,
+                }), err => {
+                    if (err) {
+                        console.log(err);
+                        return resolve(false);
+                    }
+                    resolve(true);
+                });
+            });
             this.socket = socket;
             this.excutePlugins();
             fn && fn.call(this, this.socket);

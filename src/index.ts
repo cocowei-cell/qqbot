@@ -51,12 +51,21 @@ export class QQBot {
       console.log('连接上....');
       const socketSend = socket.send.bind(socket);
       socket.send = (action, data) =>
-        socketSend(
-          JSON.stringify({
-            action,
-            params: data,
-          })
-        );
+        new Promise(resolve => {
+          socketSend(
+            JSON.stringify({
+              action,
+              params: data,
+            }),
+            err => {
+              if (err) {
+                console.log(err);
+                return resolve(false);
+              }
+              resolve(true);
+            }
+          );
+        });
       // 执行插件注册方法
       this.socket = socket;
       this.excutePlugins();

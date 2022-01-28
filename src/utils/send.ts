@@ -12,4 +12,7 @@ interface IPrivateSend {
  * @param type 发送类型
  * @param socket socket链接
  */
-export const createPrivateSender = (socket: any) => (config: IPrivateSend) => socket.send('send_private_msg', config);
+export const createPrivateSender =
+  (socket: any) =>
+    (config: IPrivateSend): Promise<boolean> =>
+      socket.send('send_private_msg', config);

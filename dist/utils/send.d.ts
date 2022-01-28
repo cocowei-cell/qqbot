@@ -4,5 +4,5 @@ interface IPrivateSend {
     message: string;
     auto_escape?: boolean;
 }
-export declare const createPrivateSender: (socket: any) => (config: IPrivateSend) => any;
+export declare const createPrivateSender: (socket: any) => (config: IPrivateSend) => Promise<boolean>;
 export {};
