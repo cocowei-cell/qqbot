@@ -1,4 +1,8 @@
 import { QQBot } from '../index';
-export declare const self: {
+export interface ISelfConfig {
+    start: string;
+    spec: string;
+}
+export declare const self: (config?: ISelfConfig) => {
     init(bot: QQBot): void;
 };

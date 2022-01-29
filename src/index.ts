@@ -159,7 +159,11 @@ export class QQBot {
       if (type === 'function') {
         plugin(this);
       } else if (type === 'object') {
-        plugin.init(this);
+        if (typeof plugin.init === 'function') {
+          plugin.init && plugin.init.call(this, this);
+        } else {
+          throw new Error('plugin必须是一个方法或者带有init方法的对象');
+        }
       }
       this.pluginsCache.add(plugin);
     });

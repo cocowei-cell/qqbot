@@ -1,6 +1,6 @@
 {
   "name": "js-qqbot",
-  "version": "1.5.3",
+  "version": "1.5.6",
   "description": "基于go-cqhttp的qq机器人js框架",
   "main": "./index.js",
   "scripts": {
